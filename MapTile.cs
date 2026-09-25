@@ -16,7 +16,7 @@ public partial class MapTile : Area2D
 
 	public TileType Type { get; private set; }
 	public Vector2I GridPosition { get; private set; }
-	private Polygon2D hoverOverlay;
+	private Sprite2D hoverOverlay;
 
 	private Sprite2D sprite;
 
@@ -28,18 +28,18 @@ public partial class MapTile : Area2D
 
 
 		//When the mouse hovers over a tile, a transparent white box appears over it
-		hoverOverlay = GetNode<Polygon2D>("HoverOverlay");
+		hoverOverlay = GetNode<Sprite2D>("HoverOverlay");
 
-		hoverOverlay.Color = new Color(1, 1, 1, 0.25f);
+		//hoverOverlay.Color = new Color(1, 1, 1, 0.25f);
 		hoverOverlay.Visible = false;
 
-		hoverOverlay.Polygon = new Vector2[]
-		{
-		new Vector2(-8, -8),
-		new Vector2(8, -8),
-		new Vector2(8, 8),
-		new Vector2(-8, 8)
-		};
+		// hoverOverlay.Polygon = new Vector2[]
+		// {
+		// new Vector2(-8, -8),
+		// new Vector2(8, -8),
+		// new Vector2(8, 8),
+		// new Vector2(-8, 8)
+		// };
 
 		MouseEntered += OnMouseEntered;
 		MouseExited += OnMouseExited;

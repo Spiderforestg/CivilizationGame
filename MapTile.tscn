@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bag5c5kj2fl3"]
 
 [ext_resource type="Script" uid="uid://c23u0cbofms6w" path="res://MapTile.cs" id="2_bo7yp"]
+[ext_resource type="Texture2D" uid="uid://bx5c1c5ig133f" path="res://sprites/Select.png" id="2_egcnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ube"]
 size = Vector2(16, 16)
@@ -14,4 +15,8 @@ script = ExtResource("2_bo7yp")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1728835998]
 shape = SubResource("RectangleShape2D_s8ube")
 
-[node name="HoverOverlay" type="Polygon2D" parent="." unique_id=1021585959]
+[node name="HoverOverlay(test)" type="Polygon2D" parent="." unique_id=1021585959]
+
+[node name="HoverOverlay" type="Sprite2D" parent="." unique_id=1993629421]
+visible = false
+texture = ExtResource("2_egcnv")
