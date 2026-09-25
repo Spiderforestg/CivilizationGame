@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://bag5c5kj2fl3"]
+
+[ext_resource type="Script" uid="uid://c23u0cbofms6w" path="res://MapTile.cs" id="2_bo7yp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ube"]
+
+[node name="MapTile" type="Area2D" unique_id=1762945732]
+scale = Vector2(5, 5)
+script = ExtResource("2_bo7yp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=662751239]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1728835998]
+shape = SubResource("RectangleShape2D_s8ube")
