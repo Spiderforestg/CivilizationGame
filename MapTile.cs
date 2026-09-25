@@ -30,16 +30,7 @@ public partial class MapTile : Area2D
 		//When the mouse hovers over a tile, a transparent white box appears over it
 		hoverOverlay = GetNode<Sprite2D>("HoverOverlay");
 
-		//hoverOverlay.Color = new Color(1, 1, 1, 0.25f);
 		hoverOverlay.Visible = false;
-
-		// hoverOverlay.Polygon = new Vector2[]
-		// {
-		// new Vector2(-8, -8),
-		// new Vector2(8, -8),
-		// new Vector2(8, 8),
-		// new Vector2(-8, 8)
-		// };
 
 		MouseEntered += OnMouseEntered;
 		MouseExited += OnMouseExited;
