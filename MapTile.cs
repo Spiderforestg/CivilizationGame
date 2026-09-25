@@ -6,7 +6,12 @@ public partial class MapTile : Area2D
 	public enum TileType
 	{
 		Grass,
-		Forest
+		Forest,
+		Mountain,
+		Farm,
+		Lumber,
+		Mine,
+		Town
 	}
 
 	public TileType Type { get; private set; }
@@ -34,11 +39,37 @@ public partial class MapTile : Area2D
 	{
 		if (Type == TileType.Grass)
 		{
-			sprite.Texture = GD.Load<Texture2D>("res://Grass.png");
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Grass.png");
 		}
-		else if (Type == TileType.Forest)
+		
+		if (Type == TileType.Forest)
 		{
-			sprite.Texture = GD.Load<Texture2D>("res://Forest.png");
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Forest.png");
+		}
+
+		if (Type == TileType.Mountain)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Mountain.png");
+		}
+
+		if (Type == TileType.Farm)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Farm.png");
+		}
+
+		if (Type == TileType.Lumber)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Lumber.png");
+		}
+
+		if (Type == TileType.Mine)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Mine.png");
+		}
+
+		else if (Type == TileType.Town)
+		{
+			sprite.Texture = GD.Load<Texture2D>("res://tiles/Town.png");
 		}
 	}
 

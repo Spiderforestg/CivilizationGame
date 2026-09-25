@@ -4,6 +4,7 @@ using System;
 public partial class Game : Node2D
 {
 	private PackedScene tileScene = GD.Load<PackedScene>("res://MapTile.tscn");
+	private int tileSize = 16 * 5;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -18,20 +19,36 @@ public partial class Game : Node2D
 
 	public void CreateTile()
 	{
-		for (int x = 0; x < 10; x++)
+
+		string[] layout = {
+			"22000",
+			"22031",
+			"02611",
+			"00141",
+			"00000"
+		};
+
+		for (int y = 0; y < layout.Length; y++)
 		{
-			for (int y = 0; y < 10; y++)
+			for (int x = 0; x < layout[y].Length; x++)
 			{
 				MapTile tile = tileScene.Instantiate<MapTile>();
 
-				MapTile.TileType tileType =
-					(x + y) % 3 == 0
-					? MapTile.TileType.Forest
-					: MapTile.TileType.Grass;
+				MapTile.TileType tileType = layout[y][x] switch {
+
+					'0' => MapTile.TileType.Grass,
+					'1' => MapTile.TileType.Forest,
+					'2' => MapTile.TileType.Mountain,
+					'3' => MapTile.TileType.Farm,
+					'4' => MapTile.TileType.Lumber,
+					'5' => MapTile.TileType.Mine,
+					'6' => MapTile.TileType.Town,
+
+					_ => MapTile.TileType.Grass
+				};
 
 				tile.Setup(tileType, new Vector2I(x, y));
-
-				tile.Position = new Vector2(30 + (x * 64), 30 + (y * 64));
+				tile.Position = new Vector2(100 + (x * (tileSize + 2)), 100 + (y * (tileSize + 2)));
 
 				AddChild(tile);
 			}

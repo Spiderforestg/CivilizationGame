@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://c23u0cbofms6w" path="res://MapTile.cs" id="2_bo7yp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ube"]
+size = Vector2(16, 16)
 
 [node name="MapTile" type="Area2D" unique_id=1762945732]
 scale = Vector2(5, 5)
