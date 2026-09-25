@@ -4,7 +4,7 @@ using System;
 public partial class Game : Node2D
 {
 	private PackedScene tileScene = GD.Load<PackedScene>("res://MapTile.tscn");
-	private int tileSize = 16 * 5;
+	private int tileSize = 16 * 4;
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -22,7 +22,7 @@ public partial class Game : Node2D
 
 		string[] layout = {
 			"22000",
-			"22031",
+			"25031",
 			"02611",
 			"00141",
 			"00000"
@@ -48,7 +48,7 @@ public partial class Game : Node2D
 				};
 
 				tile.Setup(tileType, new Vector2I(x, y));
-				tile.Position = new Vector2(100 + (x * (tileSize + 2)), 100 + (y * (tileSize + 2)));
+				tile.Position = new Vector2(400 + (x * (tileSize + 2)), 150 + (y * (tileSize + 2)));
 
 				AddChild(tile);
 			}

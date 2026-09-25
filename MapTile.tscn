@@ -6,10 +6,12 @@
 size = Vector2(16, 16)
 
 [node name="MapTile" type="Area2D" unique_id=1762945732]
-scale = Vector2(5, 5)
+scale = Vector2(4, 4)
 script = ExtResource("2_bo7yp")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=662751239]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1728835998]
 shape = SubResource("RectangleShape2D_s8ube")
+
+[node name="HoverOverlay" type="Polygon2D" parent="." unique_id=1021585959]
