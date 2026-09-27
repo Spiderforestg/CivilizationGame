@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c81ofacggw75b"
-path="res://.godot/imported/Bubble.png-9713246e3390cc8d923274b0c906226a.ctex"
+uid="uid://bwslftmhr2ea6"
+path="res://.godot/imported/CloseButtonSelected.png-0061f218cc04e5135234d390b5bcc97d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/Bubble.png"
-dest_files=["res://.godot/imported/Bubble.png-9713246e3390cc8d923274b0c906226a.ctex"]
+source_file="res://sprites/CloseButtonSelected.png"
+dest_files=["res://.godot/imported/CloseButtonSelected.png-0061f218cc04e5135234d390b5bcc97d.ctex"]
 
 [params]
 

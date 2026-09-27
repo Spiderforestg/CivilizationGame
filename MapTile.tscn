@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bag5c5kj2fl3"]
 
 [ext_resource type="Script" uid="uid://c23u0cbofms6w" path="res://MapTile.cs" id="2_bo7yp"]
-[ext_resource type="Texture2D" uid="uid://bx5c1c5ig133f" path="res://sprites/Select.png" id="2_egcnv"]
+[ext_resource type="Texture2D" uid="uid://cha6cjxq63j0q" path="res://sprites/Select.png" id="2_egcnv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8ube"]
 size = Vector2(16, 16)
@@ -17,4 +17,10 @@ shape = SubResource("RectangleShape2D_s8ube")
 
 [node name="HoverOverlay" type="Sprite2D" parent="." unique_id=1993629421]
 visible = false
+modulate = Color(1, 1, 1, 0.5294118)
+texture = ExtResource("2_egcnv")
+
+[node name="Selected" type="Sprite2D" parent="." unique_id=409429164]
+visible = false
+modulate = Color(1, 1, 1, 0.8901961)
 texture = ExtResource("2_egcnv")
