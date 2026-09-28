@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://cfy25xlr724je" path="res://TileMenu.cs" id="1_yc2be"]
 [ext_resource type="Texture2D" uid="uid://x3h1pj2bt5q8" path="res://sprites/CloseButton.png" id="3_4oynf"]
 [ext_resource type="Texture2D" uid="uid://bwslftmhr2ea6" path="res://sprites/CloseButtonSelected.png" id="4_e03l8"]
+[ext_resource type="Texture2D" uid="uid://d3rfh4ta6fngp" path="res://sprites/Upgrade.png" id="5_8brh2"]
+[ext_resource type="Texture2D" uid="uid://capotk5yfnjxx" path="res://sprites/UpgradeSelected.png" id="6_htlfc"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yc2be"]
 texture = ExtResource("1_k2isn")
@@ -158,6 +160,15 @@ texture = ExtResource("3_4oynf")
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8brh2"]
 texture = ExtResource("4_e03l8")
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lk7ek"]
+texture = ExtResource("5_8brh2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ru8v6"]
+texture = ExtResource("5_8brh2")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c3i2t"]
+texture = ExtResource("6_htlfc")
+
 [node name="TileMenu" type="Panel" unique_id=49450633]
 offset_right = 40.0
 offset_bottom = 29.0
@@ -196,3 +207,21 @@ offset_left = 28.0
 offset_top = 10.0
 offset_right = 37.0
 offset_bottom = 19.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_lk7ek")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_ru8v6")
+theme_override_styles/hover = SubResource("StyleBoxTexture_c3i2t")
+
+[node name="UpgradeInfo" type="Panel" parent="." unique_id=414173215]
+visible = false
+layout_mode = 0
+offset_left = 23.0
+offset_top = -1.0
+offset_right = 41.0
+offset_bottom = 9.0
+
+[node name="InfoLabel" type="Label" parent="UpgradeInfo" unique_id=2901833]
+layout_mode = 0
+offset_right = 87.17948
+offset_bottom = 46.0
+scale = Vector2(0.195, 0.195)
+theme_override_font_sizes/font_size = 32

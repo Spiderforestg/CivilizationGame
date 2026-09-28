@@ -8,6 +8,8 @@ public partial class TileMenu : Panel
 	private Button closeMenu;
 	private Button upgradeButton;
 	private MapTile selectedTile;
+	private Panel upgradeInfo;
+	private Label infoLabel;
 
 	//Set the tile variables
 	MapTile.TileType forest = MapTile.TileType.Forest;
@@ -25,11 +27,17 @@ public partial class TileMenu : Panel
 		positionLabel = GetNode<Label>("PositionLabel");
 		closeMenu = GetNode<Button>("CloseButton");
 		upgradeButton = GetNode<Button>("Upgrade");
+		upgradeInfo = GetNode<Panel>("UpgradeInfo");
+		infoLabel = GetNode<Label>("UpgradeInfo/InfoLabel");
 
 		closeMenu.Pressed += ButtonPressed;
 		upgradeButton.Pressed += UpgradePressed;
 
+		upgradeButton.MouseEntered += ShowUpgradeInfo;
+		upgradeButton.MouseExited += HideUpgradeInfo;
+
 		upgradeButton.Visible = false;
+		upgradeInfo.Visible = false;
 	}
 
 	public void Setup(MapTile tile)
@@ -72,17 +80,18 @@ public partial class TileMenu : Panel
 		if (selectedTile.Type == grass)
 		{
 			selectedTile.ChangeType(farm);
+			selectedTile.Deselect();
 		}
 		if (selectedTile.Type == forest)
 		{
 			selectedTile.ChangeType(lumber);
+			selectedTile.Deselect();
 		}
 		if (selectedTile.Type == mountain)
 		{
 			selectedTile.ChangeType(mine);
+			selectedTile.Deselect();
 		}
-
-		UpdateMenu();
 	}
 
 	private void UpdateMenu()
@@ -101,6 +110,44 @@ public partial class TileMenu : Panel
 		{
 			upgradeButton.Visible = false;
 		}
+	}
+
+	private void ShowUpgradeInfo()
+	{
+		if (selectedTile == null)
+		{
+			return;
+		}
+
+		if (selectedTile.Type == grass)
+		{
+			infoLabel.Text =
+				"+Farm";
+			upgradeInfo.Visible = true;
+		}
+		if (selectedTile.Type == forest)
+		{
+			infoLabel.Text =
+				"+Lumber Yard";
+			upgradeInfo.Visible = true;
+		}
+		if (selectedTile.Type == mountain)
+		{
+			infoLabel.Text =
+				"+Mine";
+			upgradeInfo.Visible = true;
+		}
+		if (selectedTile.Type == town)
+		{
+			infoLabel.Text =
+				"lvl 2";
+			upgradeInfo.Visible = true;
+		}
+	}
+
+	private void HideUpgradeInfo()
+	{
+		upgradeInfo.Visible = false;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
