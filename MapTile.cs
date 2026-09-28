@@ -123,7 +123,6 @@ public partial class MapTile : Area2D
 				currentlySelectedTile.Deselect();
 			}
 
-			//GD.Print($"Clicked {Type} at {GridPosition}");
 			currentlySelectedTile = this;
 			selected.Visible = true;
 
@@ -136,7 +135,7 @@ public partial class MapTile : Area2D
 			tileMenu.Position = new Vector2(-20, -35);
 
 			//send this tiles info to the menu
-			tileMenu.Setup(Type, GridPosition);
+			tileMenu.Setup(this);
 		}
 		//Deselects tile when right button is pressed
 		if (@event is InputEventMouseButton mouseButtonR &&
@@ -148,7 +147,6 @@ public partial class MapTile : Area2D
 					Deselect();
 					currentlySelectedTile = null;
 				}
-				//GD.Print($"Deselected {Type} at {GridPosition}");
 			}
 	}
 
@@ -167,6 +165,12 @@ public partial class MapTile : Area2D
 		{
 			currentlySelectedTile = null;
 		}
+	}
+
+	public void ChangeType(TileType newType)
+	{
+		Type = newType;
+		UpdateAppearance();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
