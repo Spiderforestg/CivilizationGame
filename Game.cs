@@ -6,10 +6,28 @@ public partial class Game : Node2D
 	private PackedScene tileScene = GD.Load<PackedScene>("res://MapTile.tscn");
 	private int tileSize = 16 * 4;
 
+	private ResourceManager resources;
+	private Label stone;
+	private Label wheat;
+	private Label timber;
+
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		resources = GetNode<ResourceManager>("/root/ResourceManager");
+		stone = GetNode<Label>("GameInformation/CurrentStone");
+		timber = GetNode<Label>("GameInformation/CurrentTimber");
+		wheat = GetNode<Label>("GameInformation/CurrentWheat");
+
+		resources.ResourcesChanged += UpdateResourceLabels;
+
 		CreateTile();
+
+		resources.AddTimber(4);
+		resources.AddStone(2);
+		resources.AddWheat(0);
+
+		UpdateResourceLabels();
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -53,5 +71,12 @@ public partial class Game : Node2D
 				AddChild(tile);
 			}
 		}
+	}
+
+	private void UpdateResourceLabels()
+	{
+		timber.Text = resources.Timber.ToString("N0");
+		stone.Text = resources.Stone.ToString("N0");
+		wheat.Text = resources.Wheat.ToString("N0");
 	}
 }

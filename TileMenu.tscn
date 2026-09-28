@@ -6,6 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://bwslftmhr2ea6" path="res://sprites/CloseButtonSelected.png" id="4_e03l8"]
 [ext_resource type="Texture2D" uid="uid://d3rfh4ta6fngp" path="res://sprites/Upgrade.png" id="5_8brh2"]
 [ext_resource type="Texture2D" uid="uid://capotk5yfnjxx" path="res://sprites/UpgradeSelected.png" id="6_htlfc"]
+[ext_resource type="Texture2D" uid="uid://cpqid4lqt16om" path="res://sprites/WheatTest.png" id="7_7e7xn"]
+[ext_resource type="Texture2D" uid="uid://cnq2nl0u7fqj3" path="res://sprites/StoneTest.png" id="8_c3i2t"]
+[ext_resource type="Texture2D" uid="uid://dsnshkgsbiyd" path="res://sprites/TimberTest.png" id="9_f5klh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yc2be"]
 texture = ExtResource("1_k2isn")
@@ -214,14 +217,62 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_c3i2t")
 [node name="UpgradeInfo" type="Panel" parent="." unique_id=414173215]
 visible = false
 layout_mode = 0
-offset_left = 23.0
-offset_top = -1.0
-offset_right = 41.0
+offset_left = 15.0
+offset_top = -9.0
+offset_right = 50.0
 offset_bottom = 9.0
 
 [node name="InfoLabel" type="Label" parent="UpgradeInfo" unique_id=2901833]
 layout_mode = 0
-offset_right = 87.17948
+offset_left = 2.0
+offset_top = 1.0
+offset_right = 346.44446
 offset_bottom = 46.0
-scale = Vector2(0.195, 0.195)
+scale = Vector2(0.09, 0.09)
 theme_override_font_sizes/font_size = 32
+
+[node name="Stone" type="Label" parent="UpgradeInfo" unique_id=1734593764]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 10.000002
+offset_right = 41.0
+offset_bottom = 33.0
+scale = Vector2(0.345, 0.345)
+theme_override_font_sizes/font_size = 16
+horizontal_alignment = 1
+
+[node name="Wheat" type="Label" parent="UpgradeInfo" unique_id=1371447617]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 10.0
+offset_right = 29.0
+offset_bottom = 33.0
+scale = Vector2(0.345, 0.345)
+horizontal_alignment = 1
+
+[node name="Timber" type="Label" parent="UpgradeInfo" unique_id=1254397041]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 10.0
+offset_right = 52.0
+offset_bottom = 33.0
+scale = Vector2(0.345, 0.345)
+horizontal_alignment = 1
+
+[node name="Wheat2" type="Sprite2D" parent="UpgradeInfo" unique_id=1914209725]
+visible = false
+position = Vector2(5.5, 8)
+scale = Vector2(0.31249997, 0.3125)
+texture = ExtResource("7_7e7xn")
+
+[node name="Stone2" type="Sprite2D" parent="UpgradeInfo" unique_id=172903776]
+visible = false
+position = Vector2(17.5, 8)
+scale = Vector2(0.31250006, 0.31250006)
+texture = ExtResource("8_c3i2t")
+
+[node name="Timber2" type="Sprite2D" parent="UpgradeInfo" unique_id=1602660586]
+visible = false
+position = Vector2(28.5, 8)
+scale = Vector2(0.31250006, 0.31250006)
+texture = ExtResource("9_f5klh")
