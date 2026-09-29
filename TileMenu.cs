@@ -117,13 +117,48 @@ public partial class TileMenu : Panel
 		}
 		if (selectedTile.Type == forest)
 		{
+			bool success = resources.SpendResources(timberCost: 1, stoneCost: 1, wheatCost: 1);
+			if (success) {
 			selectedTile.ChangeType(lumber);
 			selectedTile.Deselect();
+			}
+			else {
+				GD.Print("Not enough resources");
+
+				if (resources.Timber < 1) {FlashRed(timberPrice);}
+				if (resources.Stone < 1) {FlashRed(stonePrice);}
+				if (resources.Wheat < 1) {FlashRed(wheatPrice);}
+			}
 		}
 		if (selectedTile.Type == mountain)
 		{
+			bool success = resources.SpendResources(timberCost: 2, stoneCost: 2, wheatCost: 3);
+			if (success) {
 			selectedTile.ChangeType(mine);
 			selectedTile.Deselect();
+			}
+			else {
+				GD.Print("Not enough resources");
+
+				if (resources.Timber < 2) {FlashRed(timberPrice);}
+				if (resources.Stone < 2) {FlashRed(stonePrice);}
+				if (resources.Wheat < 3) {FlashRed(wheatPrice);}
+			}
+		}
+		if (selectedTile.Type == town)
+		{
+			bool success = resources.SpendResources(timberCost: 3, stoneCost: 5, wheatCost: 3);
+			if (success) {
+				//selectedTile.ChangeType();
+				selectedTile.Deselect();
+			}
+			else {
+				GD.Print("Upgraded Town");
+
+				if (resources.Timber < 3) {FlashRed(timberPrice);}
+				if (resources.Stone < 5) {FlashRed(stonePrice);}
+				if (resources.Wheat < 3) {FlashRed(wheatPrice);}
+			}
 		}
 	}
 
@@ -168,19 +203,37 @@ public partial class TileMenu : Panel
 		{
 			infoLabel.Text =
 				"+Lumber Yard";
+			timberPrice.Text = "1";
+			stonePrice.Text = "1";
+			wheatPrice.Text = "1";
 			upgradeInfo.Visible = true;
+			timberImg.Visible = true;
+			stoneImg.Visible = true;
+			wheatImg.Visible = true;
 		}
 		if (selectedTile.Type == mountain)
 		{
 			infoLabel.Text =
 				"+Mine";
+			timberPrice.Text = "2";
+			stonePrice.Text = "2";
+			wheatPrice.Text = "3";
 			upgradeInfo.Visible = true;
+			timberImg.Visible = true;
+			stoneImg.Visible = true;
+			wheatImg.Visible = true;
 		}
 		if (selectedTile.Type == town)
 		{
 			infoLabel.Text =
 				"lvl 2";
+			timberPrice.Text = "3";
+			stonePrice.Text = "5";
+			wheatPrice.Text = "3";
 			upgradeInfo.Visible = true;
+			timberImg.Visible = true;
+			stoneImg.Visible = true;
+			wheatImg.Visible = true;
 		}
 	}
 

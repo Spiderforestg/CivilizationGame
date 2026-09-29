@@ -23,9 +23,9 @@ public partial class Game : Node2D
 
 		CreateTile();
 
-		resources.AddTimber(4);
-		resources.AddStone(2);
-		resources.AddWheat(0);
+		resources.AddTimber(10);
+		resources.AddStone(10);
+		resources.AddWheat(10);
 
 		UpdateResourceLabels();
 	}
