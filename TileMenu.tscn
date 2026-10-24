@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bwslftmhr2ea6" path="res://sprites/CloseButtonSelected.png" id="4_e03l8"]
 [ext_resource type="Texture2D" uid="uid://d3rfh4ta6fngp" path="res://sprites/Upgrade.png" id="5_8brh2"]
 [ext_resource type="Texture2D" uid="uid://capotk5yfnjxx" path="res://sprites/UpgradeSelected.png" id="6_htlfc"]
-[ext_resource type="Texture2D" uid="uid://cpqid4lqt16om" path="res://sprites/WheatTest.png" id="7_7e7xn"]
+[ext_resource type="Texture2D" path="res://sprites/WheatTest.png" id="7_7e7xn"]
 [ext_resource type="Texture2D" uid="uid://cnq2nl0u7fqj3" path="res://sprites/StoneTest.png" id="8_c3i2t"]
 [ext_resource type="Texture2D" uid="uid://dsnshkgsbiyd" path="res://sprites/TimberTest.png" id="9_f5klh"]
 

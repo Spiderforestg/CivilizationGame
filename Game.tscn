@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://c41cmbamp34ra"]
 
 [ext_resource type="Script" uid="uid://cusp7mykijlf0" path="res://Game.cs" id="1_xkndl"]
-[ext_resource type="Texture2D" uid="uid://cnq2nl0u7fqj3" path="res://sprites/StoneTest.png" id="2_sb48q"]
-[ext_resource type="Texture2D" uid="uid://cpqid4lqt16om" path="res://sprites/WheatTest.png" id="3_t88pq"]
-[ext_resource type="Texture2D" uid="uid://dsnshkgsbiyd" path="res://sprites/TimberTest.png" id="4_r0x5m"]
+[ext_resource type="Texture2D" uid="uid://783o06lqkuv1" path="res://sprites/Stone.png" id="2_sb48q"]
+[ext_resource type="Texture2D" uid="uid://bmgf8ptp55t43" path="res://sprites/Wheat.png" id="3_sb48q"]
+[ext_resource type="Texture2D" uid="uid://bncv2qq55iney" path="res://sprites/Wood.png" id="4_sb48q"]
 
 [node name="Game" type="Node2D" unique_id=946726606]
 script = ExtResource("1_xkndl")
@@ -22,8 +22,8 @@ scale = Vector2(1.445, 1.445)
 theme_override_font_sizes/font_size = 32
 
 [node name="Stone" type="Sprite2D" parent="GameInformation" unique_id=653989313]
-position = Vector2(35, 34)
-scale = Vector2(3.625, 3.625)
+position = Vector2(40.999992, 36)
+scale = Vector2(0.91015613, 0.91015613)
 texture = ExtResource("2_sb48q")
 
 [node name="CurrentWheat" type="Label" parent="GameInformation" unique_id=324888557]
@@ -35,9 +35,9 @@ scale = Vector2(1.445, 1.445)
 theme_override_font_sizes/font_size = 32
 
 [node name="Wheat" type="Sprite2D" parent="GameInformation" unique_id=1090346023]
-position = Vector2(274, 35)
-scale = Vector2(3.625, 3.625)
-texture = ExtResource("3_t88pq")
+position = Vector2(271, 36)
+scale = Vector2(0.90234375, 0.90234375)
+texture = ExtResource("3_sb48q")
 
 [node name="CurrentTimber" type="Label" parent="GameInformation" unique_id=838080165]
 layout_mode = 0
@@ -48,7 +48,7 @@ offset_bottom = 47.0
 scale = Vector2(1.445, 1.445)
 theme_override_font_sizes/font_size = 32
 
-[node name="Timber" type="Sprite2D" parent="GameInformation" unique_id=1082108258]
-position = Vector2(496, 37)
-scale = Vector2(3.625, 3.625)
-texture = ExtResource("4_r0x5m")
+[node name="Timber" type="Sprite2D" parent="GameInformation" unique_id=1956305599]
+position = Vector2(496.99997, 36.000004)
+scale = Vector2(0.92981714, 0.92981714)
+texture = ExtResource("4_sb48q")

@@ -4,7 +4,7 @@ using System;
 public partial class Game : Node2D
 {
 	private PackedScene tileScene = GD.Load<PackedScene>("res://MapTile.tscn");
-	private int tileSize = 16 * 4;
+	private int tileSize = 64;
 
 	private ResourceManager resources;
 	private Label stone;
@@ -66,7 +66,7 @@ public partial class Game : Node2D
 				};
 
 				tile.Setup(tileType, new Vector2I(x, y));
-				tile.Position = new Vector2(400 + (x * (tileSize + 2)), 150 + (y * (tileSize + 2)));
+				tile.Position = new Vector2(400 + (x * (tileSize)), 150 + (y * (tileSize)));
 
 				AddChild(tile);
 			}
